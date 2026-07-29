@@ -1,0 +1,80 @@
+---
+import Icon from "./Icon.astro";
+
+const usps = [
+  {
+    icon: "ban",
+    title: "唯一不动浏览器标签的分组方案",
+    body: "其他标签管理器用 chrome.tabs.group 改写你的标签栏，关掉就留下一堆彩色色块。Tab Garden 的分组是纯虚拟的，只活在看板里，关闭扩展浏览器立刻恢复原样。",
+  },
+  {
+    icon: "zap",
+    title: "无框架、无打包器、无 SDK",
+    body: "纯 TypeScript 由 tsc 编译，package.json 只有 2 个开发依赖。加载快、体积小、可审计。没有 React/Vue 运行时，也没有 Supabase SDK 进你的浏览器。",
+  },
+  {
+    icon: "key",
+    title: "RLS 行级权限，数据归你",
+    body: "同步走你自己的 Supabase，每张表都用 auth.uid() = user_id 做行级隔离。service_role 密钥永不进入扩展，只有 anon/publishable key 在构建里。",
+  },
+  {
+    icon: "download",
+    title: "全量导入导出，无锁定",
+    body: "设置、域名规则、忽略网站一键导出 JSON。导入前预览规则/网站数量并明确确认才会覆盖。你的工作流不绑定任何账号体系。",
+  },
+];
+
+const compared = [
+  { label: "虚拟分组（不改浏览器标签栏）", us: true },
+  { label: "全屏看板（非 390px 弹窗）", us: true },
+  { label: "多窗口聚合 + 窗口过滤", us: true },
+  { label: "内置标签 Snooze / 稍后处理", us: true },
+  { label: "重复标签预览清理", us: true },
+  { label: "按设备类型独立记忆布局", us: true },
+  { label: "本地优先 + 可自托管 Supabase", us: true },
+];
+---
+
+<section id="why" class="bg-slate-900 px-6 py-20 text-white dark:bg-slate-950 lg:py-28">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-12 max-w-2xl">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-garden-400">
+        为什么不同
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        别让标签管理器，反过来绑架你的浏览器
+      </h2>
+      <p class="mt-4 text-lg text-slate-300">
+        很多扩展改完就改完了，关掉一片狼藉。Tab Garden 把所有秩序留在看板里，浏览器始终干净。
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="grid gap-5 sm:grid-cols-2">
+        {usps.map((u) => (
+          <div class="rounded-2xl bg-slate-800/50 p-6 ring-1 ring-slate-700 backdrop-blur">
+            <div class="mb-3 inline-flex rounded-xl bg-garden-500/20 p-2.5 text-garden-300">
+              <Icon name={u.icon} size={22} />
+            </div>
+            <h3 class="mb-2 text-base font-semibold text-white">{u.title}</h3>
+            <p class="text-sm leading-relaxed text-slate-300">{u.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/50 p-6 ring-1 ring-slate-700 backdrop-blur sm:p-8">
+        <h3 class="mb-5 text-lg font-semibold text-white">Tab Garden 能做到的</h3>
+        <ul class="space-y-3">
+          {compared.map((c) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-garden-500/20 text-garden-300">
+                <Icon name="check" size={14} />
+              </span>
+              <span class="text-sm text-slate-200">{c.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

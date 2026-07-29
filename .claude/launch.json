@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tab-garden-landing",
+      "runtimeExecutable": "fnm",
+      "runtimeArgs": ["exec", "--using=22", "npm", "run", "dev"],
+      "port": 4321,
+      "autoPort": true
+    }
+  ]
+}

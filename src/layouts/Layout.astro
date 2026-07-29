@@ -1,0 +1,122 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Tab Garden — 不动浏览器标签的虚拟看板，把混乱变成秩序",
+  description = "Tab Garden 是一款本地优先的浏览器标签管理扩展：虚拟分组看板、稍后处理、工作区跨设备同步、重复标签清理。Chrome 与 Edge 可用，不修改你的浏览器标签。",
+  ogImage = "/og-image.svg",
+  canonical = "https://tabgarden.app",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="author" content="Tab Garden" />
+
+    <title>{title}</title>
+
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${canonical}${ogImage}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="Tab Garden" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${canonical}${ogImage}`} />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Tab Garden",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Edge",
+        "description": "本地优先的浏览器标签管理扩展：虚拟分组看板、稍后处理、工作区跨设备同步、重复标签清理。不修改你的浏览器标签。",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Tab Garden 会修改我浏览器的标签分组吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。Tab Garden 采用虚拟分组：所有自动/自定义分组只存在于扩展看板中，绝不调用 chrome.tabs.group 或申请 tabGroups 权限。关闭扩展，浏览器立刻恢复原样。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tab Garden 会收集我的浏览记录吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。你的标签数据默认只保存在本地浏览器中。跨设备同步需要你自己连接 Supabase 账户，密钥由你掌握，且扩展不会自动或实时上传当前打开的标签页。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "支持哪些浏览器？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "目前支持 Chrome 和 Edge（Manifest V3）。Firefox 版本暂未支持，加入内测可优先体验新平台。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "工作区和工作区快照是什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "工作区是你手动挑选并命名的标签集合，只保存标题和 URL。它会同步到你的 Supabase，可以在任意设备登录后恢复或编辑。扩展不会自动上传当前打开的标签页。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "稍后处理（Deferred Tabs）怎么工作？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "在看板任意标签上点击稍后按钮，可选择预设提醒时间（默认 09:00 / 14:00 / 18:00，可在选项中自定义最多 5 个）。标签会被关闭并存入本地待恢复列表，到点后看板会高亮提醒，可一键重新打开。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "这是免费工具吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "基础功能免费。未来可能会推出面向团队或重度用户的 Pro 计划，但本地核心功能将始终保持免费。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <slot />
+  </body>
+</html>

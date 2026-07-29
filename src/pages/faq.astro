@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const faqs = [
+  {
+    question: "Tab Garden 会修改我浏览器的标签分组吗？",
+    answer:
+      "不会。Tab Garden 采用虚拟分组：所有自动/自定义分组只存在于扩展看板中，绝不调用 chrome.tabs.group 或申请 tabGroups 权限。关闭扩展，浏览器立刻恢复原样。",
+  },
+  {
+    question: "Tab Garden 会收集我的浏览记录吗？",
+    answer:
+      "不会。你的标签数据默认只保存在本地浏览器中。跨设备同步需要你自己连接 Supabase 账户，密钥由你掌握，且扩展不会自动或实时上传当前打开的标签页。",
+  },
+  {
+    question: "支持哪些浏览器？",
+    answer:
+      "目前支持 Chrome 和 Edge（Manifest V3）。Firefox 版本暂未支持，加入内测可优先体验新平台。",
+  },
+  {
+    question: "稍后处理（Deferred Tabs）怎么工作？",
+    answer:
+      "在看板任意标签上点击稍后按钮，可选择预设提醒时间（默认 09:00 / 14:00 / 18:00，可在选项中自定义最多 5 个）。标签会被关闭并存入本地待恢复列表，到点后看板会高亮提醒，可一键重新打开。",
+  },
+  {
+    question: "工作区是什么？",
+    answer:
+      "工作区是你手动挑选并命名的标签集合，只保存标题和 URL。它会同步到你的 Supabase，可以在任意设备登录后恢复或编辑。扩展不会自动上传当前打开的标签页。",
+  },
+  {
+    question: "看板可以替换浏览器的新标签页吗？",
+    answer:
+      "可以。在选项中开启「在新标签页打开看板」后，每次新建标签会跳转到看板。该功能通过事件监听实现而非 chrome_url_overrides，随时关闭即可恢复浏览器原生新标签页，无需重启。",
+  },
+  {
+    question: "这是免费工具吗？",
+    answer:
+      "基础功能免费。未来可能会推出面向团队或重度用户的 Pro 计划，但本地核心功能将始终保持免费。",
+  },
+  {
+    question: "如何反馈问题或建议？",
+    answer:
+      "你可以通过页面底部的联系方式，或在扩展的选项页中直接提交反馈。内测用户优先进入私有讨论群。",
+  },
+];
+---
+
+<Layout title="常见问题 | Tab Garden" description="Tab Garden 的常见问题解答：虚拟分组、本地优先隐私、工作区跨设备同步、稍后处理等。">
+  <Navbar />
+  <main class="px-6 py-20 lg:py-28">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="mb-3 text-center text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+        常见问题
+      </h1>
+      <p class="mb-12 text-center text-slate-600 dark:text-slate-300">
+        关于虚拟分组、隐私、工作区与稍后处理的答疑。
+      </p>
+
+      <div class="space-y-4">
+        {
+          faqs.map((faq) => (
+            <details class="group rounded-2xl border border-slate-200 bg-white p-5 open:ring-2 open:ring-garden-500/20 dark:border-slate-700 dark:bg-slate-900">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900 dark:text-white">
+                {faq.question}
+                <span class="ml-4 shrink-0 text-garden-600 transition group-open:rotate-180 dark:text-garden-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">{faq.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-garden-50 p-6 text-center dark:bg-garden-950/20">
+        <h2 class="text-lg font-semibold text-slate-900 dark:text-white">还有其他问题？</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">加入内测，直接在群里向我们提问。</p>
+        <a
+          href="/#beta"
+          class="mt-4 inline-flex items-center rounded-xl bg-garden-600 px-5 py-2.5 font-semibold text-white transition hover:bg-garden-700"
+        >
+          返回首页加入内测
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
