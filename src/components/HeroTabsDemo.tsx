@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import { dictionaries, type Lang } from "../i18n/ui";
 
 type Phase = "before" | "after";
+
+interface Props {
+  lang?: Lang;
+}
 
 const beforeTabs = [
   { title: "GitHub - tab-manager/pull/142", color: "bg-slate-700" },
@@ -15,38 +20,40 @@ const beforeTabs = [
   { title: "GitHub - tab-manager/issues", color: "bg-slate-700" },
 ];
 
-const groups = [
-  {
-    name: "开发",
-    badge: "窗口 1",
-    color: "bg-blue-50 border-blue-200 dark:bg-blue-950/40 dark:border-blue-800",
-    accent: "text-blue-700 dark:text-blue-300",
-    tabs: ["GitHub - tab-manager/pull/142", "React docs: Hooks", "Stack Overflow", "MDN - Array.from"],
-  },
-  {
-    name: "稍后读",
-    badge: "提醒 14:00",
-    color: "bg-amber-50 border-amber-200 dark:bg-amber-950/40 dark:border-amber-800",
-    accent: "text-amber-700 dark:text-amber-300",
-    tabs: ["How to focus - YouTube", "Medium: 深度长文"],
-  },
-  {
-    name: "工作",
-    badge: "窗口 1",
-    color: "bg-emerald-50 border-emerald-200 dark:bg-emerald-950/40 dark:border-emerald-800",
-    accent: "text-emerald-700 dark:text-emerald-300",
-    tabs: ["Notion - Roadmap Q3", "Figma - Landing v2"],
-  },
-  {
-    name: "社交",
-    badge: "窗口 2",
-    color: "bg-sky-50 border-sky-200 dark:bg-sky-950/40 dark:border-sky-800",
-    accent: "text-sky-700 dark:text-sky-300",
-    tabs: ["Twitter / X", "GitHub - issues"],
-  },
-];
+export default function HeroTabsDemo({ lang = "zh" }: Props) {
+  const dict = dictionaries[lang];
 
-export default function HeroTabsDemo() {
+  const groups = [
+    {
+      name: dict["demo.group.dev"],
+      badge: dict["demo.badge.window1"],
+      color: "bg-blue-50 border-blue-200 dark:bg-blue-950/40 dark:border-blue-800",
+      accent: "text-blue-700 dark:text-blue-300",
+      tabs: ["GitHub - tab-manager/pull/142", "React docs: Hooks", "Stack Overflow", "MDN - Array.from"],
+    },
+    {
+      name: dict["demo.group.later"],
+      badge: dict["demo.badge.reminder"],
+      color: "bg-amber-50 border-amber-200 dark:bg-amber-950/40 dark:border-amber-800",
+      accent: "text-amber-700 dark:text-amber-300",
+      tabs: ["How to focus - YouTube", "Medium: 深度长文"],
+    },
+    {
+      name: dict["demo.group.work"],
+      badge: dict["demo.badge.window1"],
+      color: "bg-emerald-50 border-emerald-200 dark:bg-emerald-950/40 dark:border-emerald-800",
+      accent: "text-emerald-700 dark:text-emerald-300",
+      tabs: ["Notion - Roadmap Q3", "Figma - Landing v2"],
+    },
+    {
+      name: dict["demo.group.social"],
+      badge: dict["demo.badge.window2"],
+      color: "bg-sky-50 border-sky-200 dark:bg-sky-950/40 dark:border-sky-800",
+      accent: "text-sky-700 dark:text-sky-300",
+      tabs: ["Twitter / X", "GitHub - issues"],
+    },
+  ];
+
   const [phase, setPhase] = useState<Phase>("before");
 
   useEffect(() => {
@@ -73,7 +80,7 @@ export default function HeroTabsDemo() {
                 : "bg-slate-100 text-slate-500 dark:bg-slate-800"
             }`}
           >
-            {phase === "after" ? "已整理" : "整理前"}
+            {phase === "after" ? dict["demo.phase.after"] : dict["demo.phase.before"]}
           </span>
         </div>
       </div>
@@ -138,10 +145,10 @@ export default function HeroTabsDemo() {
       </div>
 
       <div className="mt-3 flex items-center justify-between border-t border-slate-100 pt-3 text-[11px] text-slate-400 dark:border-slate-800">
-        <span>浏览器标签栏 · 未改动</span>
+        <span>{dict["demo.footer.left"]}</span>
         <span className="inline-flex items-center gap-1">
           <span className="h-1.5 w-1.5 rounded-full bg-garden-500" />
-          看板视图
+          {dict["demo.footer.right"]}
         </span>
       </div>
     </div>

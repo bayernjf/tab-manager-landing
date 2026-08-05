@@ -1,27 +1,16 @@
 ---
 import Icon from "./Icon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import type { IconName } from "../types";
 
-const steps = [
-  {
-    icon: "layout-grid",
-    title: "装上扩展，打开看板",
-    body: "安装后点击工具栏图标，从弹窗一键打开全屏看板。可选开启「新标签页替换」，让每次新建标签直达看板——也可随时关闭，立即恢复浏览器原生新标签页。",
-  },
-  {
-    icon: "layers",
-    title: "自动聚合或自定义分组",
-    body: "看板默认按域名自动聚合（可设 2/3/4 个标签阈值）；也可在弹窗勾选标签、命名分组、选 9 种颜色创建自定义组。还能用域名规则精确匹配，把多域名归为一组。",
-  },
-  {
-    icon: "bookmark",
-    title: "稍后处理与重复清理",
-    body: "暂不看的标签点稍后按钮、选提醒时间即关闭归档；想清理冗余时一键扫描重复 URL，预览确认后批量关闭。",
-  },
-  {
-    icon: "cloud-sync",
-    title: "登录后跨设备同步",
-    body: "连接你自己的 Supabase 账户，设置、域名规则、忽略网站、看板布局、工作区全部同步。换设备登录即恢复你的全部秩序。",
-  },
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const steps: { icon: IconName; title: string; body: string }[] = [
+  { icon: "layout-grid", title: t("how.step1.title"), body: t("how.step1.body") },
+  { icon: "layers", title: t("how.step2.title"), body: t("how.step2.body") },
+  { icon: "bookmark", title: t("how.step3.title"), body: t("how.step3.body") },
+  { icon: "cloud-sync", title: t("how.step4.title"), body: t("how.step4.body") },
 ];
 ---
 
@@ -29,10 +18,10 @@ const steps = [
   <div class="mx-auto max-w-6xl">
     <div class="mb-12 max-w-2xl">
       <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-garden-600 dark:text-garden-400">
-        工作原理
+        {t("how.eyebrow")}
       </p>
       <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-        四步把标签花园种起来
+        {t("how.title")}
       </h2>
     </div>
 
