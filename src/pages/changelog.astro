@@ -2,50 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { changelogReleases } from "../i18n/ui";
 
-const releases = [
-  {
-    version: "v0.3.0",
-    date: "2026-07-25",
-    title: "工作区与跨设备同步",
-    items: [
-      "新增工作区：手动挑选标签命名成集合，只同步标题与 URL",
-      "支持连接用户自己的 Supabase 账户同步设置、规则、布局与工作区",
-      "看板支持按设备类型（桌面/平板/手机）独立记忆手动布局",
-      "优化暗黑模式下的视觉一致性",
-    ],
-  },
-  {
-    version: "v0.2.0",
-    date: "2026-07-10",
-    title: "稍后处理与重复标签清理",
-    items: [
-      "新增稍后处理（Deferred Tabs）：关闭标签并设置提醒时间",
-      "看板新增「待恢复提醒」分区，到点高亮提醒",
-      "新增重复标签扫描：按精确 URL 聚合，预览确认后批量清理",
-      "修复标签过多时的滚动性能问题",
-    ],
-  },
-  {
-    version: "v0.1.0",
-    date: "2026-06-20",
-    title: "首个内测版",
-    items: [
-      "虚拟分组看板上线（不调用 tabGroups 权限）",
-      "按域名自动聚合，支持 2/3/4 标签阈值",
-      "支持自定义分组规则与 9 种颜色",
-      "全屏看板聚合多窗口标签，支持搜索与窗口过滤",
-    ],
-  },
-];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const releases = changelogReleases[lang];
 ---
 
-<Layout title="更新日志 | Tab Garden" description="Tab Garden 的版本更新记录">
+<Layout title={t("changelogPage.title")} description={t("changelogPage.description")} lang={lang}>
   <Navbar />
   <main class="px-6 py-20 lg:py-28">
     <div class="mx-auto max-w-3xl">
       <h1 class="mb-12 text-center text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-        更新日志
+        {t("changelogPage.h1")}
       </h1>
 
       <div class="relative space-y-8 border-l-2 border-slate-200 pl-8 dark:border-slate-800">
