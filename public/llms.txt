@@ -1,0 +1,51 @@
+# Tab Garden
+
+> Tab Garden is a local-first browser tab manager extension that uses a virtual board to group, snooze, sync, and clean up tabs — without ever touching the browser's native tab bar.
+
+Tab Garden is a Chrome and Edge (Manifest V3) extension that aggregates every window's tabs into a single full-screen board. All grouping is virtual: the extension never calls chrome.tabs.group or requests the tabGroups permission. Removing the extension restores the browser instantly.
+
+## Core Features
+
+- **Virtual grouping board**: Auto-group by domain or create custom groups in 9 colors. Groups exist only in the board, never in the browser tab bar.
+- **Full-screen multi-window board**: Aggregate tabs from all normal windows, filter by window, search by title/URL/domain in real time.
+- **Drag-and-drop masonry layout**: HTML5 drag to move tabs between groups; auto-flowing masonry grid with per-device (desktop/tablet/phone) independent layout memory.
+- **Deferred Tabs (snooze)**: Close tabs and set reminder times (default 09:00/14:00/18:00, up to 5 customizable). Board highlights when due.
+- **Workspaces**: Manually curate tabs into named sets storing only titles and URLs. Sync to your own Supabase for cross-device restore.
+- **Duplicate tab cleanup**: One-click scan across all windows, aggregate by exact URL, preview before batch-closing.
+
+## Privacy & Data
+
+- **Local-first**: All data stored in chrome.storage.local by default. No backend server.
+- **No tracking**: No analytics SDK, tracking pixels, or third-party statistics.
+- **No auto-upload**: Never automatically uploads currently open tabs. Only manually saved workspaces sync.
+- **Self-hostable Supabase sync**: Optional cross-device sync via your own Supabase project. RLS row-level security with auth.uid() = user_id. service_role key never enters the extension.
+- **Runtime ID stripping**: Workspace snapshots store only titles and URLs. tabId/windowId are never uploaded.
+- **Minimal permissions**: Only requests tabs, storage, and optional Supabase host permission. No tabGroups, history, bookmarks, cookies, or webRequest.
+
+## Installation
+
+- Chrome Web Store (coming soon)
+- Microsoft Edge Add-ons (coming soon)
+- Beta program: join via the landing page at https://tabgarden.pages.dev
+
+## Pricing
+
+Core features are free. A Pro plan for teams or power users may be introduced in the future, but local core functionality will always remain free.
+
+## FAQ
+
+Full FAQ: https://tabgarden.pages.dev/faq (English: https://tabgarden.pages.dev/en/faq)
+
+---
+
+## 中文摘要
+
+Tab Garden 是一款本地优先的浏览器标签管理扩展，支持 Chrome 和 Edge（Manifest V3）。它用一张全屏看板把所有窗口的标签聚合、分组、稍后处理、跨设备保存，而浏览器标签栏始终保持原样。
+
+核心特点：虚拟分组（不调用 tabGroups 权限）、全屏多窗口看板、拖拽瀑布流布局、稍后处理（标签 Snooze）、工作区跨设备同步（仅同步标题+URL）、重复标签清理。
+
+隐私：本地优先存储、不追踪、不自动上传标签、可自托管 Supabase 同步、RLS 行级安全、运行时 ID 永不上传。
+
+价格：基础功能免费。
+
+完整 FAQ：https://tabgarden.pages.dev/faq

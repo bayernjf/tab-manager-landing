@@ -1,22 +1,29 @@
 ---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 
 const cols = [
   {
-    title: "产品",
+    title: t("footer.product"),
     links: [
-      { label: "功能", href: "#features" },
-      { label: "为什么不同", href: "#why" },
-      { label: "工作原理", href: "#how" },
-      { label: "更新日志", href: "/changelog" },
+      { label: t("nav.features"), href: "#features" },
+      { label: t("nav.why"), href: "#why" },
+      { label: t("nav.how"), href: "#how" },
+      { label: t("footer.changelog"), href: getLocalizedPath("/changelog", lang) },
     ],
   },
   {
-    title: "资源",
+    title: t("footer.resources"),
     links: [
-      { label: "FAQ", href: "/faq" },
-      { label: "隐私政策", href: "#privacy" },
-      { label: "加入内测", href: "#beta" },
+      { label: t("nav.faq"), href: getLocalizedPath("/faq", lang) },
+      { label: t("footer.privacy"), href: getLocalizedPath("/privacy", lang) },
+      { label: t("footer.terms"), href: getLocalizedPath("/terms", lang) },
+      { label: t("footer.joinBeta"), href: "#beta" },
+      { label: "GitHub", href: "https://github.com/bayernjf/tab-manager" },
+      { label: "BayJF", href: "https://bayjf.pages.dev" },
     ],
   },
 ];
@@ -31,10 +38,10 @@ const cols = [
           <span class="text-lg font-semibold text-slate-900 dark:text-white">Tab Garden</span>
         </div>
         <p class="mt-3 max-w-xs text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-          不动浏览器标签的虚拟看板。本地优先、可自托管同步的浏览器标签管理扩展。
+          {t("footer.tagline")}
         </p>
         <p class="mt-4 text-xs text-slate-400 dark:text-slate-500">
-          支持 Chrome · Edge · Manifest V3
+          {t("footer.supports")}
         </p>
       </div>
 
@@ -56,10 +63,10 @@ const cols = [
 
     <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-6 dark:border-slate-800 sm:flex-row">
       <p class="text-xs text-slate-500 dark:text-slate-500">
-        © {year} Tab Garden. All rights reserved.
+        {t("footer.copyright").replace("{year}", String(year))}
       </p>
       <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400 dark:text-slate-600">
-        Built with Astro · No tracking
+        {t("footer.builtWith")}
       </p>
     </div>
   </div>

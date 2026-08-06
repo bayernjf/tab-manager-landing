@@ -1,8 +1,9 @@
 ---
 import Icon from "./Icon.astro";
+import type { IconName } from "../types";
 
 interface Props {
-  icon: string;
+  icon: IconName;
   title: string;
   description: string;
   tags?: string[];
