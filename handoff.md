@@ -21,3 +21,17 @@ hub 站（bayjf）中 Tab Garden 卡片已指向 https://tab-manager-landing.pag
 2. 部署到 Cloudflare Pages（项目名 tab-manager-landing）。
 3. 部署后验证 hub 站 Tab Garden 卡片图片与链接、og:image、404。
 4. `git push`（dev 分支，推送前可先 `git pull --rebase`）。
+
+## taste-skill 设计审计（2026-08-08，本地未提交）
+按 taste-skill 反 AI-slop 方法论清理设计 Tell，仅动样式与文案，
+未改动内容 IA、URL、路由和功能逻辑。
+- 英文文案 em-dash 清扫：SEO 标题 `X — Brand` 统一为 `X | Brand`、404 标题改用冒号、
+  正文按语义改冒号/分号/逗号；中文“——”为规范破折号，保留未动。
+- 导航栏边框/阴影切换由 scroll 监听改为 IntersectionObserver 顶部哨兵
+  （src/components/Navbar.astro），项目内 scroll 监听零残留。
+- EYEBROW 节制：FAQ、Features、HowItWorks、PainPoint、Privacy、WhyGarden
+  6 个区块级 eyebrow 去掉 `uppercase tracking-wider`，降级为普通小号彩色标签；
+  Hero/CTA pill badge 与 Footer 栏目标题属合理模式，保留。
+- `npm run build` 验证通过（11 页）。
+
+后续：审阅上述改动后按原子规则分批提交推送（英文 Conventional Commits）。
