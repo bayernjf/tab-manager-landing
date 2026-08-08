@@ -203,7 +203,7 @@ const zh: Dict = {
   "demo.footer.right": "看板视图",
 
   // ---- Layout defaults ----
-  "layout.defaultTitle": "Tab Garden — 不动浏览器标签的虚拟看板，把混乱变成秩序",
+  "layout.defaultTitle": "Tab Garden | 不动浏览器标签的虚拟看板，把混乱变成秩序",
   "layout.defaultDescription":
     "Tab Garden 是一款本地优先的浏览器标签管理扩展：虚拟分组看板、稍后处理、工作区跨设备同步、重复标签清理。Chrome 与 Edge 可用，不修改你的浏览器标签。",
   "layout.softwareAppDesc":
@@ -303,7 +303,7 @@ const en: Dict = {
   "hero.titleLine1": "Tame your tabs without touching",
   "hero.titleLine2": "the browser tab bar",
   "hero.subtitle":
-    "Tab Garden gathers every window's tabs into one full-screen board — group them, snooze them, sync workspaces across devices — while your browser tab bar stays exactly as it is.",
+    "Tab Garden gathers every window's tabs into one full-screen board, group them, snooze them, sync workspaces across devices, while your browser tab bar stays exactly as it is.",
   "hero.noTabGroups": "No tabGroups permission",
   "hero.localFirst": "Local-first, no tracking",
   "hero.multiWindow": "Multi-window aggregation",
@@ -313,12 +313,12 @@ const en: Dict = {
 
   // ---- Features ----
   "features.eyebrow": "Core features",
-  "features.title": "Not just another tab manager — a complete workflow",
+  "features.title": "Not just another tab manager: a complete workflow",
   "features.subtitle":
     "From aggregation and grouping to snooze and cross-device sync, Tab Garden shrinks “find that tab” from 5 minutes to 3 seconds.",
   "features.f1.title": "Virtual grouping board",
   "features.f1.desc":
-    "Auto-group by domain or create custom groups in 9 colors — every group lives only in the board, never calls chrome.tabs.group, and your browser tab bar stays untouched.",
+    "Auto-group by domain or create custom groups in 9 colors; every group lives only in the board, never calls chrome.tabs.group, and your browser tab bar stays untouched.",
   "features.f1.tag1": "Auto-group",
   "features.f1.tag2": "9 colors",
   "features.f1.tag3": "No browser change",
@@ -330,18 +330,18 @@ const en: Dict = {
   "features.f2.tag3": "Window filter",
   "features.f3.title": "Drag-and-drop masonry layout",
   "features.f3.desc":
-    "HTML5 drag: move tabs between groups, reorder entire groups. Auto-flowing masonry grid with optional manual layout — desktop / tablet / phone positions are saved independently and never overwrite each other.",
+    "HTML5 drag: move tabs between groups, reorder entire groups. Auto-flowing masonry grid with optional manual layout; desktop / tablet / phone positions are saved independently and never overwrite each other.",
   "features.f3.tag1": "Drag",
   "features.f3.tag2": "Masonry",
   "features.f3.tag3": "Per-device memory",
   "features.f4.title": "Snooze tabs (Deferred Tabs)",
   "features.f4.desc":
-    "Tuck away “read later” tabs and close them with custom reminder times (default 09:00 / 14:00 / 18:00, up to 5). The board highlights them when due — one click reopens.",
+    "Tuck away “read later” tabs and close them with custom reminder times (default 09:00 / 14:00 / 18:00, up to 5). The board highlights them when due; one click reopens.",
   "features.f4.tag1": "Close to archive",
   "features.f4.tag2": "Timed reminder",
   "features.f5.title": "Workspaces · cross-device sync",
   "features.f5.desc":
-    "Manually curate tabs into a named workspace storing only titles and URLs, synced to your own Supabase. Sign in on another device to restore or edit — the extension never auto-uploads current tabs.",
+    "Manually curate tabs into a named workspace storing only titles and URLs, synced to your own Supabase. Sign in on another device to restore or edit; the extension never auto-uploads current tabs.",
   "features.f5.tag1": "Manual curation",
   "features.f5.tag2": "Syncs title + URL only",
   "features.f6.title": "Duplicate tab cleanup",
@@ -358,7 +358,7 @@ const en: Dict = {
   "pain.step1.title": "Open the board",
   "pain.step1.body": "Full-screen board aggregates tabs from all windows, auto-grouped by domain",
   "pain.step2.title": "Locate the group",
-  "pain.step2.body": "Filter by window or search title/URL/domain — lock on in 3 seconds",
+  "pain.step2.body": "Filter by window or search title/URL/domain: lock on in 3 seconds",
   "pain.step3.title": "Click to jump",
   "pain.step3.body": "Click a card to switch to the window and activate that tab",
   "pain.before": "Before",
@@ -378,13 +378,13 @@ const en: Dict = {
     "Many extensions leave a mess when removed. Tab Garden keeps all order in the board so your browser stays clean.",
   "why.usp1.title": "The only grouping that never touches browser tabs",
   "why.usp1.body":
-    "Other tab managers call chrome.tabs.group and rewrite your tab bar, leaving colored blobs when removed. Tab Garden's groups are purely virtual — they live in the board, and removing the extension restores the browser instantly.",
+    "Other tab managers call chrome.tabs.group and rewrite your tab bar, leaving colored blobs when removed. Tab Garden's groups are purely virtual: they live in the board, and removing the extension restores the browser instantly.",
   "why.usp2.title": "No framework, no bundler, no SDK",
   "why.usp2.body":
     "Plain TypeScript compiled by tsc, with only 2 dev dependencies in package.json. Fast to load, small in size, fully auditable. No React/Vue runtime, no Supabase SDK shipped into your browser.",
   "why.usp3.title": "RLS row-level security, your data",
   "why.usp3.body":
-    "Sync runs through your own Supabase, every table isolated with auth.uid() = user_id. The service_role key never enters the extension — only the anon/publishable key is in the build.",
+    "Sync runs through your own Supabase, every table isolated with auth.uid() = user_id. The service_role key never enters the extension; only the anon/publishable key is in the build.",
   "why.usp4.title": "Full import / export, zero lock-in",
   "why.usp4.body":
     "Export settings, domain rules, and ignored sites as JSON in one click. Preview counts before import and confirm explicitly to overwrite. Your workflow isn't tied to any account system.",
@@ -402,7 +402,7 @@ const en: Dict = {
   "how.title": "Grow your tab garden in four steps",
   "how.step1.title": "Install and open the board",
   "how.step1.body":
-    "After install, click the toolbar icon to open the full-screen board from the popup. Optionally enable “new tab override” so every new tab opens the board — turn it off anytime to restore the native new tab page.",
+    "After install, click the toolbar icon to open the full-screen board from the popup. Optionally enable “new tab override” so every new tab opens the board; turn it off anytime to restore the native new tab page.",
   "how.step2.title": "Auto-group or customize",
   "how.step2.body":
     "The board auto-groups by domain by default (set a 2/3/4 tab threshold); or select tabs in the popup, name a group, pick from 9 colors. Use domain rules to match multiple domains into one group.",
@@ -417,7 +417,7 @@ const en: Dict = {
   "privacyComp.eyebrow": "Privacy & data",
   "privacyComp.title": "Your data belongs to you",
   "privacyComp.subtitle":
-    "Tab Garden doesn't hoard your browsing history on a server. Local-first storage + self-hostable Supabase sync — the extension only requests “tabs”, “storage”, and an optional Supabase host permission.",
+    "Tab Garden doesn't hoard your browsing history on a server. Local-first storage + self-hostable Supabase sync; the extension only requests “tabs”, “storage”, and an optional Supabase host permission.",
   "privacyComp.permissionsTitle": "All permissions requested by the extension",
   "privacyComp.permissionsNote": "Does not request tabGroups, history, bookmarks, cookies, or any sensitive permission.",
   "privacyComp.perm1": "tabs",
@@ -425,13 +425,13 @@ const en: Dict = {
   "privacyComp.perm3": "host: *.supabase.co (optional)",
   "privacyComp.point1.title": "Local-first",
   "privacyComp.point1.body":
-    "All groups, layout, snoozed items, and custom groups live only in chrome.storage.local by default — never touching a server.",
+    "All groups, layout, snoozed items, and custom groups live only in chrome.storage.local by default, never touching a server.",
   "privacyComp.point2.title": "No auto-upload of tabs",
   "privacyComp.point2.body":
     "The extension never auto-uploads or streams your currently open tabs. Workspaces sync only the titles + URLs you manually curate, with runtime IDs stripped.",
   "privacyComp.point3.title": "RLS row-level isolation",
   "privacyComp.point3.body":
-    "Sync goes through your own Supabase, every table isolated with auth.uid() = user_id. The service_role key never enters the extension — only the anon key is in the build.",
+    "Sync goes through your own Supabase, every table isolated with auth.uid() = user_id. The service_role key never enters the extension; only the anon key is in the build.",
   "privacyComp.point4.title": "Full export, zero lock-in",
   "privacyComp.point4.body":
     "Export settings, domain rules, and ignored sites as JSON in one click; preview counts before import and confirm to overwrite. No account system lock-in.",
@@ -440,7 +440,7 @@ const en: Dict = {
   "cta.betaBadge": "Beta recruiting now",
   "cta.title": "Ready to tend your tab garden?",
   "cta.subtitle":
-    "Join the beta to experience new features first and send feedback directly. Your browser tab bar won't be touched — that's the Tab Garden promise.",
+    "Join the beta to experience new features first and send feedback directly. Your browser tab bar won't be touched: that's the Tab Garden promise.",
   "cta.joinBeta": "Join the beta",
   "cta.orInstall": "Or install directly from the store:",
   "cta.chrome": "Chrome extension",
@@ -479,9 +479,9 @@ const en: Dict = {
   "demo.footer.right": "Board view",
 
   // ---- Layout defaults ----
-  "layout.defaultTitle": "Tab Garden — The virtual board that tames tab chaos without touching your browser",
+  "layout.defaultTitle": "Tab Garden | The virtual board that tames tab chaos without touching your browser",
   "layout.defaultDescription":
-    "Tab Garden is a local-first browser tab manager extension: virtual grouping board, snooze tabs, cross-device workspace sync, duplicate cleanup. Available for Chrome and Edge — never modifies your browser tabs.",
+    "Tab Garden is a local-first browser tab manager extension: virtual grouping board, snooze tabs, cross-device workspace sync, duplicate cleanup. Available for Chrome and Edge, and never modifies your browser tabs.",
   "layout.softwareAppDesc":
     "A local-first browser tab manager extension: virtual grouping board, snooze tabs, cross-device workspace sync, duplicate cleanup. Never modifies your browser tabs.",
 
@@ -508,21 +508,21 @@ const en: Dict = {
   "privacyPage.updated": "Last updated: 2026-08-05",
   "privacyPage.intro":
     "Tab Garden is a local-first browser tab manager extension. This policy explains how we (barely) handle your data and what you should know when using Supabase sync.",
-  "privacyPage.s1.title": "1. Local-first — data stays in your browser by default",
+  "privacyPage.s1.title": "1. Local-first: data stays in your browser by default",
   "privacyPage.s1.body":
-    "All core features of Tab Garden — virtual groups, board layout, snoozed items, custom groups, domain rules — are stored only in the browser's local chrome.storage.local. We do not run any backend server that receives or stores your tab data.",
+    "All core features of Tab Garden (virtual groups, board layout, snoozed items, custom groups, domain rules) are stored only in the browser's local chrome.storage.local. We do not run any backend server that receives or stores your tab data.",
   "privacyPage.s2.title": "2. No tracking, no analytics, no tab upload",
   "privacyPage.s2.body":
     "Tab Garden contains no analytics SDK, tracking pixel, or third-party statistics code. The extension never auto-uploads or streams your currently open tabs. Your browsing history is never collected, transmitted, or sold.",
   "privacyPage.s3.title": "3. Cross-device sync (optional)",
   "privacyPage.s3.body":
-    "If you want to sync settings, domain rules, board layout, and workspaces across devices, you must register and connect your own Supabase project. The sync credentials are yours — Tab Garden does not hold your Supabase secrets. Synced data is limited to: stable settings, domain rules, ignored-site lists, board group metadata, board layout metadata, and workspace snapshots (tab titles and URLs) you manually save.",
+    "If you want to sync settings, domain rules, board layout, and workspaces across devices, you must register and connect your own Supabase project. The sync credentials are yours; Tab Garden does not hold your Supabase secrets. Synced data is limited to: stable settings, domain rules, ignored-site lists, board group metadata, board layout metadata, and workspace snapshots (tab titles and URLs) you manually save.",
   "privacyPage.s4.title": "4. Data scope and runtime IDs",
   "privacyPage.s4.body":
-    "Workspace snapshots store only tab titles and URLs — never runtime IDs (tabId, windowId). Runtime browser state (tabId, windowId, virtual board assignment keys) is stored locally only and never uploaded. The extension does not auto-upload your currently open tabs — only content you explicitly save as a workspace is synced.",
+    "Workspace snapshots store only tab titles and URLs, never runtime IDs (tabId, windowId). Runtime browser state (tabId, windowId, virtual board assignment keys) is stored locally only and never uploaded. The extension does not auto-upload your currently open tabs; only content you explicitly save as a workspace is synced.",
   "privacyPage.s5.title": "5. Extension permissions",
   "privacyPage.s5.body":
-    "Tab Garden requests only these permissions: tabs (read tab titles and URLs for display in the board), storage (local settings and board data), and an optional Supabase host permission (used only when sync is enabled). The extension does not request tabGroups, history, bookmarks, cookies, webRequest, or any sensitive permission. Groups exist only in the board — chrome.tabs.group is never called.",
+    "Tab Garden requests only these permissions: tabs (read tab titles and URLs for display in the board), storage (local settings and board data), and an optional Supabase host permission (used only when sync is enabled). The extension does not request tabGroups, history, bookmarks, cookies, webRequest, or any sensitive permission. Groups exist only in the board; chrome.tabs.group is never called.",
   "privacyPage.s6.title": "6. Data export and deletion",
   "privacyPage.s6.body":
     "You can export all local data as a JSON file from the extension options page. Removing the extension clears all local data. If you use Supabase sync, you can delete rows from tables such as user_settings in your own Supabase dashboard at any time.",
@@ -553,7 +553,7 @@ const en: Dict = {
     "See the Privacy Policy for detailed data handling. The Extension does not collect, track, or sell your browsing history. Cross-device sync is provided by a Supabase project you connect yourself; data ownership remains yours.",
   "termsPage.s5.title": "5. Third-party services",
   "termsPage.s5.body":
-    "The optional sync feature relies on Supabase (supabase.co). When using sync, your data is stored and transmitted per your own Supabase project configuration and is subject to Supabase's terms of service. The Extension does not bundle any Supabase SDK — all interaction is via REST API.",
+    "The optional sync feature relies on Supabase (supabase.co). When using sync, your data is stored and transmitted per your own Supabase project configuration and is subject to Supabase's terms of service. The Extension does not bundle any Supabase SDK; all interaction is via REST API.",
   "termsPage.s6.title": "6. Changes to terms",
   "termsPage.s6.body":
     "The author reserves the right to modify these terms at any time. Continued use of the Extension after changes constitutes acceptance of the new terms. Material changes will be communicated via extension update notes.",
@@ -619,12 +619,12 @@ export const faqComponentItems: Record<Lang, FaqItem[]> = {
     {
       question: "Does Tab Garden collect my browsing history?",
       answer:
-        "No. Your tab data is stored only in the local browser by default. Cross-device sync requires you to connect your own Supabase account — the keys are yours, and the extension never auto-uploads your currently open tabs.",
+        "No. Your tab data is stored only in the local browser by default. Cross-device sync requires you to connect your own Supabase account; the keys are yours, and the extension never auto-uploads your currently open tabs.",
     },
     {
       question: "Which browsers are supported?",
       answer:
-        "Currently Chrome and Edge (Manifest V3). Firefox is not yet supported — join the beta to get early access to new platforms.",
+        "Currently Chrome and Edge (Manifest V3). Firefox is not yet supported; join the beta to get early access to new platforms.",
     },
     {
       question: "What are workspaces and workspace snapshots?",
@@ -639,7 +639,7 @@ export const faqComponentItems: Record<Lang, FaqItem[]> = {
     {
       question: "Can the board replace the browser's new tab page?",
       answer:
-        "Yes. Enable “Open board on new tab” in options and every new tab opens the board. This is implemented via event listeners rather than chrome_url_overrides — turn it off anytime to restore the native new tab page without restarting.",
+        "Yes. Enable “Open board on new tab” in options and every new tab opens the board. This is implemented via event listeners rather than chrome_url_overrides; turn it off anytime to restore the native new tab page without restarting.",
     },
     {
       question: "Is this a free tool?",

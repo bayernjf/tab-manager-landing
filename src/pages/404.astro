@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const zh = lang === "zh";
 ---
 
-<Layout title={zh ? "404 — 页面不存在" : "404 — Page Not Found"} description={zh ? "你访问的页面不存在或已被移动。" : "The page you visited does not exist or has been moved."} lang={lang}>
+<Layout title={zh ? "404: 页面不存在" : "404: Page Not Found"} description={zh ? "你访问的页面不存在或已被移动。" : "The page you visited does not exist or has been moved."} lang={lang}>
   <Navbar />
   <main class="px-6 py-20 lg:py-28">
     <div class="mx-auto max-w-3xl text-center">
