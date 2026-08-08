@@ -133,13 +133,17 @@ const { lang: altLang, path: altPath } = getAltLangPath(Astro.url.pathname, lang
   closeEls.forEach((el) => el.addEventListener("click", () => setOpen(false)));
 
   const header = document.getElementById("site-nav");
-  const onScroll = () => {
-    if (window.scrollY > 8) {
-      header?.classList.add("border-slate-200", "dark:border-slate-800");
-    } else {
+  // Nav border toggle via a top sentinel + IntersectionObserver
+  // (no window scroll listener)
+  const navSentinel = document.createElement("div");
+  navSentinel.setAttribute("aria-hidden", "true");
+  navSentinel.style.cssText = "position:absolute;top:8px;height:1px;width:1px;pointer-events:none;";
+  document.body.prepend(navSentinel);
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
       header?.classList.remove("border-slate-200", "dark:border-slate-800");
+    } else {
+      header?.classList.add("border-slate-200", "dark:border-slate-800");
     }
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  }).observe(navSentinel);
 </script>
