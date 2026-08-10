@@ -34,7 +34,7 @@ Core features are free. A Pro plan for teams or power users may be introduced in
 
 ## FAQ
 
-Full FAQ: https://tabgarden.pages.dev/faq (English: https://tabgarden.pages.dev/en/faq)
+Full FAQ: https://tabgarden.pages.dev/faq (Chinese: https://tabgarden.pages.dev/zh/faq)
 
 ---
 
@@ -48,4 +48,4 @@ Tab Garden 是一款本地优先的浏览器标签管理扩展，支持 Chrome �
 
 价格：基础功能免费。
 
-完整 FAQ：https://tabgarden.pages.dev/faq
+完整 FAQ：https://tabgarden.pages.dev/zh/faq

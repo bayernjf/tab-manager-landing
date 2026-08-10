@@ -27,8 +27,8 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 const canonical = `${SITE}${pathname}`;
 
 // Localized paths for hreflang.
-const zhPath = lang === "en" ? pathname.replace(/^\/en(?:\/|$)/, "/") : pathname;
-const enPath = lang === "en" ? pathname : `/en${pathname === "/" ? "" : pathname}`;
+const enPath = lang === "zh" ? pathname.replace(/^\/zh(?:\/|$)/, "/") : pathname;
+const zhPath = lang === "zh" ? pathname : `/zh${pathname === "/" ? "" : pathname}`;
 
 const htmlLang = lang === "en" ? "en-US" : "zh-CN";
 const ogLocale = lang === "en" ? "en_US" : "zh_CN";
@@ -106,7 +106,7 @@ const faqPageJsonLd = {
     {/* hreflang */}
     <link rel="alternate" hreflang="zh-CN" href={`${SITE}${zhPath}`} />
     <link rel="alternate" hreflang="en-US" href={`${SITE}${enPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`${SITE}${zhPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE}${enPath}`} />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
