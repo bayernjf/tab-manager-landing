@@ -22,6 +22,15 @@ hub 站（bayjf）中 Tab Garden 卡片已指向 https://tab-manager-landing.pag
 3. 部署后验证 hub 站 Tab Garden 卡片图片与链接、og:image、404。
 4. `git push`（dev 分支，推送前可先 `git pull --rebase`）。
 
+## 落地页预览图自动化方案（2026-08-10）
+- hub 站 bayjf 的 Tab Garden 卡片引用本站的 `https://tab-manager-landing.pages.dev/preview.png` 作为封面。
+- 本站现状：已有 `public/preview.png`（手动放置），但**项目尚未部署**，bayjf 卡片暂为死链；
+  待部署后卡片方可显示，并建议后续改为方案 A 自动产出。
+- 14 个落地页均走 **Cloudflare Pages 平台自动部署**（push 即发，无部署 Action），故预览图需在
+  **构建命令内**用 Playwright 截图自动产出（方案 A），而非额外 GitHub Action。
+- 完整方案见 bayjf 仓库 `docs/PREVIEW_IMAGE_PIPELINE.md`。bayjf 自身零改动（URL 不变）。
+- 下一步（优先级高于截图）：先解决域名不一致并部署，再按方案 A 改造自动截图。
+
 ## taste-skill 设计审计（2026-08-08，本地未提交）
 按 taste-skill 反 AI-slop 方法论清理设计 Tell，仅动样式与文案，
 未改动内容 IA、URL、路由和功能逻辑。
