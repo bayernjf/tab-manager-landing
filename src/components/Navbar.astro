@@ -1,5 +1,6 @@
 ---
 import BayjfLink from '@bay/landing-ui/components/BayjfLink.astro';
+import StarOnGithub from '@bay/landing-ui/components/StarOnGithub.astro';
 import Icon from "./Icon.astro";
 import { getLangFromUrl, useTranslations, getAltLangPath } from "../i18n/utils";
 
@@ -50,6 +51,7 @@ const { lang: altLang, path: altPath } = getAltLangPath(Astro.url.pathname, lang
 
     <div class="flex items-center gap-3">
       <BayjfLink size={18} class="hidden text-sm font-medium text-slate-600 transition-colors hover:text-garden-600 dark:text-slate-300 dark:hover:text-garden-400 sm:inline-block" />
+      <StarOnGithub href="https://github.com/bayernjf/tab-manager" size={15} class="hidden text-slate-600 dark:text-slate-300 sm:inline-flex" />
       <a
         href={altPath}
         class="rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-600 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
@@ -91,6 +93,9 @@ const { lang: altLang, path: altPath } = getAltLangPath(Astro.url.pathname, lang
       ))}
       <li>
         <BayjfLink size={18} class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-garden-600 dark:text-slate-200 dark:hover:bg-slate-800" data-nav-close />
+      </li>
+      <li class="px-3 py-2">
+        <StarOnGithub href="https://github.com/bayernjf/tab-manager" size={15} class="text-slate-700 dark:text-slate-200" data-nav-close />
       </li>
       <li class="flex items-center gap-2 px-3 py-2">
         <a

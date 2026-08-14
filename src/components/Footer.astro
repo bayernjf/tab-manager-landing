@@ -1,5 +1,6 @@
 ---
 import BayjfLink from '@bay/landing-ui/components/BayjfLink.astro';
+import StarOnGithub from '@bay/landing-ui/components/StarOnGithub.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -23,8 +24,8 @@ const cols = [
       { label: t("footer.privacy"), href: getLocalizedPath("/privacy", lang) },
       { label: t("footer.terms"), href: getLocalizedPath("/terms", lang) },
       { label: t("footer.joinBeta"), href: "#beta" },
-      { label: "GitHub", href: "https://github.com/bayernjf/tab-manager" },
       { label: "BayJF", href: "https://bayjf.com" },
+      { label: "GitHub", href: "https://github.com/bayernjf/tab-manager" },
     ],
   },
 ];
@@ -62,6 +63,8 @@ const cols = [
               <li>
                 {l.href === "https://bayjf.com" ? (
                   <BayjfLink size={16} class="text-sm text-slate-600 transition-colors hover:text-garden-600 dark:text-slate-300 dark:hover:text-garden-400" label={l.label} />
+                ) : l.href === "https://github.com/bayernjf/tab-manager" ? (
+                  <StarOnGithub href="https://github.com/bayernjf/tab-manager" size={14} class="text-slate-600 dark:text-slate-300" />
                 ) : (
                   <a href={l.href} class="text-sm text-slate-600 transition-colors hover:text-garden-600 dark:text-slate-300 dark:hover:text-garden-400">
                     {l.label}
