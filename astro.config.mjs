@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 // Cloudflare Pages 默认域名（部署后在 CF 控制台绑定自定义域名时同步修改）
-const SITE = 'https://tabgarden.pages.dev';
+const SITE = 'https://tab-manager.bayjf.com';
 
 // https://astro.build/config
 export default defineConfig({
