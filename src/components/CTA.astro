@@ -1,9 +1,13 @@
 ---
 import Icon from "./Icon.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { releasesUrl } from "@bay/landing-ui/lib/releases";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// 兜底到 releases 页；脚本会换成最新 release 里的扩展包
+const fallbackUrl = releasesUrl("bayernjf/tab-manager");
 ---
 
 <section id="beta" class="px-6 py-20 lg:py-28">
@@ -41,14 +45,20 @@ const t = useTranslations(lang);
 
     <div class="mt-4 flex flex-wrap justify-center gap-3">
       <a
-        href="#"
+        data-download-ext
+        href={fallbackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
       >
         <Icon name="chrome" size={18} />
         {t("cta.chrome")}
       </a>
       <a
-        href="#"
+        data-download-ext
+        href={fallbackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
       >
         <Icon name="globe" size={18} />
@@ -76,4 +86,18 @@ const t = useTranslations(lang);
       }, 2600);
     }
   });
+</script>
+
+<script>
+  import { fetchLatestAssets, formatBytes } from "@bay/landing-ui/lib/releases";
+
+  // Chrome 和 Edge 装的是同一个包，所以两个按钮共用一个 data 属性
+  const { assets } = await fetchLatestAssets("bayernjf/tab-manager", { ext: ".zip" });
+
+  if (assets.ext) {
+    document.querySelectorAll("[data-download-ext]").forEach((el) => {
+      el.setAttribute("href", assets.ext!.url);
+      el.setAttribute("title", formatBytes(assets.ext!.size));
+    });
+  }
 </script>
